@@ -19,6 +19,7 @@ class Prioridad(Lista):
             return False
 
     def ordenar(self):
+        #print("----sin ordenar----")
         #self.recorrerLista()
         fin = None
         while fin != self.NodoCabeza:
@@ -39,8 +40,9 @@ class Prioridad(Lista):
                 p = p.getDerecho()
             fin = p
         print("\n")
+        #print("----ordenado-----")
         self.recorrerLista()
-        print("\n")
+        #print("\n")
         return self;
     
 
@@ -72,14 +74,8 @@ def costoUniforme(arreglo, meta):
             listaPrioridad.eliminar()
             #ordena la lista de menor a mayor siendo el NodoCabeza el nodo con costo menor
             listaPrioridad = listaPrioridad.ordenar()
-            #se busca la lista donde viene el proximo nodo padre e hijos
-            listaBuscada = buscarLista(arreglo, listaPrioridad.NodoCabeza)
-            #suma el costo de la lista buscada y el nodo padre
-            sumaCostes = listaBuscada.NodoCabeza.getCosto() + nodoAux.getCosto()
-            #Se modifica el costo del nodoCabeza de la lista buscada
-            listaBuscada.NodoCabeza.setCosto(sumaCostes)
-            #El siguiente nodo sera el nodo Cabeza de la lista buscada
-            nodoAux = listaBuscada.NodoCabeza
+            #El siguiente nodo sera el nodo Cabeza de la lista prioridad
+            nodoAux = listaPrioridad.NodoCabeza
             continue
         # Se valida si el dato del nodo es la meta buscada
         dato = str(nodoAux.getDato())
@@ -88,8 +84,10 @@ def costoUniforme(arreglo, meta):
             print("Meta encontrada en ", nodoAux.getDato())
             break;
         else:
+            #se buscan el nodo en el arbol para desplegar a sus hijos
+            listaBuscada = buscarLista(arreglo, nodoAux)
             #El hijo del nodo actual seran los nodos siguientes de la lista
-            hijo = nodoAux.getDerecho()
+            hijo = listaBuscada.NodoCabeza.getDerecho()
             #se agregan los hijos a la lista de prioridades
             while hijo != None:
                 #se suma el costo de los nodos hijos con el nodo padre
@@ -102,14 +100,8 @@ def costoUniforme(arreglo, meta):
             listaPrioridad.eliminar()
             #ordena la lista de menor a mayor siendo el NodoCabeza el nodo con costo menor
             listaPrioridad = listaPrioridad.ordenar()
-            #se busca la lista donde viene el proximo nodo padre e hijos
-            listaBuscada = buscarLista(arreglo, listaPrioridad.NodoCabeza)
-            #suma el costo de la lista buscada y el nodo padre
-            sumaCostes = listaBuscada.NodoCabeza.getCosto() + nodoAux.getCosto()
-            #Se modifica el costo del nodoCabeza de la lista buscada
-            listaBuscada.NodoCabeza.setCosto(sumaCostes)
-            #El siguiente nodo sera el nodo Cabeza de la lista buscada
-            nodoAux = listaBuscada.NodoCabeza
+            #El siguiente nodo sera el nodo Cabeza de la lista prioridad
+            nodoAux = listaPrioridad.NodoCabeza
 #test
 #listaPrioridad = Prioridad("A", 4.0)
 #listaPrioridad.insertar("B", 2.0)
