@@ -6,12 +6,24 @@ class Nodo:
         self.__refIzq = None
     
     def getDato(self):
+        """
+        Devuelve el valor de la variable dato.
+        :return: El valor del atributo dato.
+        """
         return self.__dato
     
     def getDerecho(self):
+        """
+        Devuelve el hijo derecho del nodo.
+        :return: El hijo derecho del nodo.
+        """
         return self.__refDer
     
     def getIzquierdo(self):
+        """
+        Devuelve la referencia al nodo izquierdo.
+        :return: La referencia al hijo izquierdo del nodo..
+        """
         return self.__refIzq
 
     def setDato(self, nuevoDato):
@@ -24,6 +36,10 @@ class Nodo:
         self.__refIzq = nuevaRef
     
     def getCosto(self):
+        """
+        Devuelve el costo.
+        :return: El costo.
+        """
         return self.__costo
 
     def setCosto(self, nuevoCosto):
