@@ -1,5 +1,6 @@
 from grafo import *
 
+
 def grafoGreedy():
     print("------------------------- ejecicio Greedy -------------------------")
     grafo = Grafo()
@@ -19,7 +20,7 @@ def grafoGreedy():
     grafo.agregarVector('Fagaras1', 176)
     grafo.agregarVector('Fagaras2', 176)
     grafo.agregarVector('Rimnicu Vilcea1', 193)
-    grafo.agregarVector('Rimnicu Vilcea1', 193)
+    grafo.agregarVector('Rimnicu Vilcea2', 193)
     grafo.agregarVector('Pitesti1', 100)
     grafo.agregarVector('Pitesti2', 100)
     grafo.agregarVector('Pitesti3', 100)
@@ -33,53 +34,79 @@ def grafoGreedy():
     grafo.agregarVector('Bucharest6', 0)
     grafo.agregarVector('Bucharest7', 0)
 
-    
-    #Arad
+    # Arad
     grafo.relacionar('Arad', 'Timisoara', 329)
     grafo.relacionar('Arad', 'Sibiu', 253)
     grafo.relacionar('Arad', 'Zerind', 374)
-    
-    #Timisoara
+
+    # Timisoara
     grafo.relacionar('Timisoara', 'Lugoj', 244)
-    
-    #Lugoj
+
+    # Lugoj
     grafo.relacionar('Lugoj', 'Mehadia', 241)
-    
-    #Mehadia
+
+    # Mehadia
     grafo.relacionar('Mehadia', 'Dobreta', 242)
-    
-    #Dobreta
+
+    # Dobreta
     grafo.relacionar('Dobreta', 'Craiova1', 160)
-    
-    #Craiova1
+
+    # Craiova1
     grafo.relacionar('Craiova1', 'Pitesti1', 100)
-    
-    #Pitesti1
+
+    # Pitesti1
     grafo.relacionar('Pitesti1', 'Bucharest1', 0)
-    
-    #Sibiu
-    grafo.relacionar('Sibiu1', 'Orades', 380)
-    grafo.relacionar('Sibiu1', 'Fagaras', 176)
+
+    # Sibiu1
+    grafo.relacionar('Sibiu1', 'Oradea1', 380)
+    grafo.relacionar('Sibiu1', 'Fagaras1', 176)
     grafo.relacionar('Sibiu1', 'Rimnicu Vilcea', 193)
-    
-    #Rimnicu Vilcea1
+
+    # Rimnicu Vilcea1
     grafo.relacionar('Rimnicu Vilcea1', 'Craiova2', 160)
     grafo.relacionar('Rimnicu Vilcea1', 'Pitesti3', 100)
-    
-    #Craiova2
+
+    # Craiova2
     grafo.relacionar('Craiova2', 'Pitesti2', 160)
-    
-    #Pitesti2
+
+    # Pitesti2
     grafo.relacionar('Pitesti2', 'Bucharest2', 0)
-    
-    #Fagaras1
+
+    # Fagaras1
     grafo.relacionar('Fagaras1', 'Bucharest4', 0)
-    
+
+    # Zerind
+    grafo.relacionar('Zerind', 'Oradea1', 380)
+
+    # Oradea2
+    grafo.relacionar('Oradea2', 'Sibiu2', 253)
+
+    # Sibiu2
+    grafo.relacionar('Sibiu2', 'Rimnicu Vilcea2', 193)
+    grafo.relacionar('Sibiu2', 'Fagaras2', 176)
+
+    # Fagaras2
+    grafo.relacionar('Fagaras2', 'Bucharest7', 0)
+
+    # Rimnicu Vilcea2
+    grafo.relacionar('Rimnicu Vilcea2', 'Craiova3', 160)
+    grafo.relacionar('Rimnicu Vilcea2', 'Pitesti5', 100)
+
+    # Craiova3
+    grafo.relacionar('Craiova3', 'Pitesti4', 100)
+
+    # Pitesti5
+    grafo.relacionar('Pitesti5', 'Bucharest6', 0)
+
+    # Pitesti4
+    grafo.relacionar('Pitesti4', 'Bucharest5', 0)
+
     print("Grafo:")
 
     grafo.mostrarVectores()
     print("\n")
     print("Procedimiento")
     costoUniforme(grafo.arreglo, 'G')
-    
+
+
 grafoGreedy()
