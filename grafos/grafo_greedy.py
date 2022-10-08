@@ -1,5 +1,5 @@
 from grafo import *
-
+from Greedy import *
 
 def grafoGreedy():
     print("------------------------- ejecicio Greedy -------------------------")
@@ -8,7 +8,7 @@ def grafoGreedy():
     grafo.agregarVector('Timisoara', 329)
     grafo.agregarVector('Sibiu1', 253)
     grafo.agregarVector('Sibiu2', 253)
-    grafo.agregarVector('Zerind' 374)
+    grafo.agregarVector('Zerind', 374)
     grafo.agregarVector('Oradea1', 380)
     grafo.agregarVector('Oradea2', 380)
     grafo.agregarVector('Lugoj', 244)
@@ -36,7 +36,7 @@ def grafoGreedy():
 
     # Arad
     grafo.relacionar('Arad', 'Timisoara', 329)
-    grafo.relacionar('Arad', 'Sibiu', 253)
+    grafo.relacionar('Arad', 'Sibiu1', 253)
     grafo.relacionar('Arad', 'Zerind', 374)
 
     # Timisoara
@@ -106,7 +106,7 @@ def grafoGreedy():
     grafo.mostrarVectores()
     print("\n")
     print("Procedimiento")
-    costoUniforme(grafo.arreglo, 'G')
+    metodoGreedy(grafo.arreglo, "Bucharest")
 
 
 grafoGreedy()
