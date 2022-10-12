@@ -4,10 +4,10 @@ class Lista:
     NodoCabeza = None
     NodoCola = None
 
-    def __init__(self, dato, costo):
-        self.NodoCabeza = Nodo(dato, costo)
+    def __init__(self, dato, costo, heuristica=None):
+        self.NodoCabeza = Nodo(dato, costo, heuristica)
     
-    def insertarNodo(self, dato, costo): 
+    def insertarNodo(self, dato, costo, heuristica=None): 
         """
         Si la lista está vacía, crea un nuevo nodo y lo sobreescribe 
         como el nodo principal. De lo contrario, crea un nuevo nodo, 
@@ -16,20 +16,20 @@ class Lista:
         
         """
         if self.listaVacia():
-            self.NodoCabeza = Nodo(dato, costo)
+            self.NodoCabeza = Nodo(dato, costo, heuristica)
         else:
-            nuevoNodo = Nodo(dato, costo)
+            nuevoNodo = Nodo(dato, costo, heuristica)
             nodoFin = self.irAlFinal()
             nodoFin.setDerecho(nuevoNodo)
     
-    def insertarNodoCabeza(self, dato, costo):
+    def insertarNodoCabeza(self, dato, costo, heuristica=None):
         """
         Crea un nuevo nodo y, si la lista está vacía, establece el nuevo nodo como el nodo principal.
         De lo contrario, establece el puntero derecho del nuevo nodo en el nodo principal actual y 
         luego establece el nuevo nodo como el nodo principal.
         
         """
-        nuevoNodo = Nodo(dato, costo)
+        nuevoNodo = Nodo(dato, costo, heuristica)
         if self.listaVacia():
             self.NodoCabeza = nuevoNodo
         else: 

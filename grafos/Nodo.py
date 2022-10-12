@@ -1,7 +1,8 @@
 class Nodo:
-    def __init__(self, dato, costo):
+    def __init__(self, dato, costo, heuristica=None):
         self.__dato = dato
         self.__costo = costo
+        self.__heuristica = heuristica
         self.__refDer = None
         self.__refIzq = None
     
@@ -44,3 +45,9 @@ class Nodo:
 
     def setCosto(self, nuevoCosto):
         self.__costo = nuevoCosto
+
+    def setHeuristica(self, nuevaHeuristica):
+        self.__heuristica = nuevaHeuristica
+    
+    def getHeuristica(self):
+        return self.__heuristica
