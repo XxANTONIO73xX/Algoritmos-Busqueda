@@ -1,5 +1,5 @@
 from Lista import *
-
+## WARNING Algoritmo sin terminar
 class Aasterisco(Lista):
     def __init__(self, dato, costo, heuristica):
         Lista.__init__(self, dato, costo, heuristica)
